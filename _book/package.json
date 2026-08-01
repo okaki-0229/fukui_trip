@@ -1,0 +1,16 @@
+{
+  "name": "fukui_trip",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "serve": "honkit serve",
+    "build": "honkit build"
+  },
+  "devDependencies": {
+    "gitbook-plugin-addcssjs": "^1.0.2",
+    "gitbook-plugin-chollapse": "^1.0.1",
+    "honkit": "^6.2.2"
+  }
+}
+
+
