@@ -307,7 +307,7 @@ body {
    タイムライン
 ======================================== */
 
-.travel-timeline {
+/* .travel-timeline {
   position: relative;
   margin: 30px 0;
   padding: 0;
@@ -446,6 +446,116 @@ body {
 .timeline-label.important {
   background: var(--travel-red);
 }
+
+/* ========================================
+   タイムライン：パターン2
+======================================== */
+
+/* .travel-timeline.pattern-two {
+  margin: 30px 0;
+  padding: 0;
+}
+
+.travel-timeline.pattern-two::before {
+  display: none;
+}
+
+.travel-timeline.pattern-two .timeline-item {
+  display: block;
+  margin-bottom: 24px;
+}
+
+.travel-timeline.pattern-two .timeline-card {
+  position: relative;
+  padding: 20px 22px;
+  background: #ffffff;
+  border: 1px solid var(--travel-border);
+  border-left: 5px solid var(--travel-blue);
+  border-radius: 14px;
+  box-shadow: 0 5px 16px rgba(38, 74, 96, 0.08);
+}
+
+.travel-timeline.pattern-two .timeline-card::before {
+  display: none;
+}
+
+.travel-timeline.pattern-two .timeline-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--travel-border);
+}
+
+.travel-timeline.pattern-two .timeline-time {
+  padding: 0;
+  color: var(--travel-deep-blue);
+  font-size: 1.2em;
+  font-weight: bold;
+  line-height: 1.2;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.travel-timeline.pattern-two .timeline-card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  padding: 0;
+  color: var(--travel-deep-blue);
+  border: none;
+}
+
+.travel-timeline.pattern-two .timeline-label {
+  display: inline-block;
+  margin: 0;
+  padding: 5px 12px;
+  color: #ffffff;
+  font-size: 0.84em;
+  font-weight: bold;
+  white-space: nowrap;
+  border-radius: 999px;
+}
+
+.travel-timeline.pattern-two .timeline-item.transport .timeline-card {
+  border-left-color: var(--travel-blue);
+}
+
+.travel-timeline.pattern-two .timeline-item.sightseeing .timeline-card {
+  border-left-color: var(--travel-green);
+}
+
+.travel-timeline.pattern-two .timeline-item.food .timeline-card {
+  border-left-color: var(--travel-orange);
+}
+
+.travel-timeline.pattern-two .timeline-item.hotel .timeline-card {
+  border-left-color: var(--travel-purple);
+}
+
+.travel-timeline.pattern-two .timeline-item.important .timeline-card {
+  border-left-color: var(--travel-red);
+}
+
+@media screen and (max-width: 700px) {
+  .travel-timeline.pattern-two .timeline-card {
+    padding: 17px 15px;
+  }
+
+  .travel-timeline.pattern-two .timeline-header {
+    gap: 10px;
+  }
+
+  .travel-timeline.pattern-two .timeline-time {
+    font-size: 1.05em;
+  }
+
+  .travel-timeline.pattern-two .timeline-label {
+    padding: 4px 10px;
+    font-size: 0.78em;
+  }
+} */
 
 /* ========================================
    写真の説明
@@ -602,5 +712,266 @@ body {
     z-index: 1000;
     min-width: 44px;
     min-height: 40px;
+  }
+}
+/* ========================================
+   旅行スケジュールカード
+   旧タイムラインとは別設計
+======================================== */
+
+.trip-plan {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 30px 0;
+}
+
+/* 予定カード */
+.trip-plan-card {
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid var(--travel-border);
+  border-left: 6px solid var(--travel-blue);
+  border-radius: 16px;
+  box-shadow: 0 7px 22px rgba(38, 74, 96, 0.10);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.trip-plan-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(38, 74, 96, 0.14);
+}
+
+/* カード上部 */
+.trip-plan-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 20px;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(234, 247, 255, 0.95),
+      rgba(255, 240, 246, 0.85)
+    );
+  border-bottom: 1px solid var(--travel-border);
+}
+
+/* 時刻 */
+.trip-plan-time {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--travel-deep-blue);
+  font-size: 1.25em;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.trip-plan-clock {
+  font-size: 1.1em;
+}
+
+/* 分類ラベル */
+.trip-plan-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 30px;
+  padding: 4px 13px;
+  color: #ffffff;
+  font-size: 0.84em;
+  font-weight: bold;
+  white-space: nowrap;
+  border-radius: 999px;
+}
+
+/* カード本文 */
+.trip-plan-body {
+  padding: 20px 22px 22px;
+}
+
+.trip-plan-title {
+  margin: 0 0 10px;
+  padding: 0;
+  color: var(--travel-deep-blue);
+  font-size: 1.4em;
+  border: none;
+}
+
+.trip-plan-text {
+  margin: 0;
+  color: var(--travel-text);
+  line-height: 1.8;
+}
+
+.trip-plan-detail {
+  margin-top: 14px;
+  padding: 12px 15px;
+  color: var(--travel-sub-text);
+  background: #f7fafc;
+  border-radius: 9px;
+}
+
+/* ========================================
+   種類ごとの色
+======================================== */
+
+/* 移動 */
+.trip-plan-card.is-transport {
+  border-left-color: var(--travel-blue);
+}
+
+.trip-plan-label.is-transport {
+  background: var(--travel-blue);
+}
+
+/* 観光 */
+.trip-plan-card.is-sightseeing {
+  border-left-color: var(--travel-green);
+}
+
+.trip-plan-label.is-sightseeing {
+  background: var(--travel-green);
+}
+
+/* 食事 */
+.trip-plan-card.is-food {
+  border-left-color: var(--travel-orange);
+}
+
+.trip-plan-label.is-food {
+  background: var(--travel-orange);
+}
+
+/* ホテル */
+.trip-plan-card.is-hotel {
+  border-left-color: var(--travel-purple);
+}
+
+.trip-plan-label.is-hotel {
+  background: var(--travel-purple);
+}
+
+/* 重要事項 */
+.trip-plan-card.is-important {
+  border-left-color: var(--travel-red);
+}
+
+.trip-plan-label.is-important {
+  background: var(--travel-red);
+}
+
+/* ========================================
+   Googleマップボタン
+======================================== */
+
+.trip-map-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.trip-map-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 10px 18px;
+  color: #ffffff !important;
+  font-weight: bold;
+  text-decoration: none !important;
+  background:
+    linear-gradient(
+      135deg,
+      var(--travel-blue),
+      var(--travel-sky-blue)
+    );
+  border-radius: 999px;
+  box-shadow: 0 5px 14px rgba(40, 120, 181, 0.22);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.trip-map-button:hover {
+  color: #ffffff !important;
+  text-decoration: none !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(40, 120, 181, 0.30);
+}
+
+.trip-map-button.is-pink {
+  background:
+    linear-gradient(
+      135deg,
+      var(--travel-pink),
+      #f4adc8
+    );
+  box-shadow: 0 5px 14px rgba(238, 143, 180, 0.25);
+}
+
+/* ========================================
+   スマートフォン
+======================================== */
+
+@media screen and (max-width: 700px) {
+  .trip-plan {
+    gap: 18px;
+    margin: 22px 0;
+  }
+
+  .trip-plan-card {
+    border-left-width: 5px;
+    border-radius: 13px;
+  }
+
+  .trip-plan-header {
+    gap: 10px;
+    padding: 13px 14px;
+  }
+
+  .trip-plan-time {
+    font-size: 1.06em;
+  }
+
+  .trip-plan-label {
+    min-height: 27px;
+    padding: 3px 10px;
+    font-size: 0.76em;
+  }
+
+  .trip-plan-body {
+    padding: 17px 15px 19px;
+  }
+
+  .trip-plan-title {
+    font-size: 1.25em;
+  }
+
+  .trip-map-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .trip-map-button {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+/* 幅がかなり狭いスマホ */
+@media screen and (max-width: 380px) {
+  .trip-plan-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .trip-plan-label {
+    align-self: flex-start;
   }
 }
