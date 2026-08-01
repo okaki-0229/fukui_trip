@@ -975,3 +975,120 @@ body {
     align-self: flex-start;
   }
 }
+
+/* ========================================
+   観光スポットページ
+======================================== */
+
+.spot-main-image {
+  width: 100%;
+  height: 390px;
+  margin: 0 auto 14px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: var(--travel-shadow);
+}
+
+.spot-sub-image {
+  width: 100%;
+  height: 320px;
+  margin: 28px auto 14px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: var(--travel-shadow);
+}
+
+.spot-summary {
+  margin: 28px 0;
+  padding: 20px 22px;
+  background:
+    linear-gradient(
+      135deg,
+      var(--travel-light-blue),
+      var(--travel-light-pink)
+    );
+  border: 1px solid var(--travel-border);
+  border-left: 6px solid var(--travel-pink);
+  border-radius: 13px;
+}
+
+.spot-summary-title {
+  margin-bottom: 8px;
+  color: var(--travel-deep-blue);
+  font-size: 1.15em;
+  font-weight: bold;
+}
+
+.spot-summary p {
+  margin: 0;
+  line-height: 1.8;
+}
+
+.spot-point-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 22px 0;
+}
+
+.spot-point-card {
+  display: flex;
+  gap: 13px;
+  padding: 18px;
+  background: #ffffff;
+  border: 1px solid var(--travel-border);
+  border-radius: 13px;
+  box-shadow: 0 5px 16px rgba(38, 74, 96, 0.07);
+}
+
+.spot-point-card strong {
+  color: var(--travel-deep-blue);
+  font-size: 1.03em;
+}
+
+.spot-point-card p {
+  margin: 7px 0 0;
+  color: var(--travel-sub-text);
+  font-size: 0.94em;
+  line-height: 1.65;
+}
+
+.spot-point-icon {
+  flex: 0 0 auto;
+  font-size: 1.8em;
+}
+
+.travel-important {
+  margin: 22px 0;
+  padding: 16px 19px;
+  color: #72414f;
+  background: var(--travel-light-pink);
+  border: 1px solid rgba(238, 143, 180, 0.55);
+  border-left: 6px solid var(--travel-pink);
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 700px) {
+  .spot-main-image {
+    height: 230px;
+    border-radius: 13px;
+  }
+
+  .spot-sub-image {
+    height: 210px;
+    border-radius: 12px;
+  }
+
+  .spot-summary {
+    padding: 16px;
+  }
+
+  .spot-point-list {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .spot-point-card {
+    padding: 15px;
+  }
+}
