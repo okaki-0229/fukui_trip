@@ -1,0 +1,19 @@
+{
+  "title": "福井旅行しおり",
+  "description": "2026年8月10日から8月12日までの福井旅行しおり",
+  "language": "ja",
+  "plugins": [
+    "chollapse",
+    "addcssjs"
+  ],
+  "pluginsConfig": {
+    "addcssjs": {
+      "js": [
+        "scripts/website.js"
+      ]
+    }
+  },
+  "styles": {
+    "website": "styles/website.css"
+  }
+}

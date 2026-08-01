@@ -1,0 +1,591 @@
+/* ========================================
+   福井旅行しおり 共通デザイン
+======================================== */
+
+:root {
+  --travel-blue: #2878b5;
+  --travel-light-blue: #eaf7ff;
+  --travel-sky-blue: #74c8ef;
+  --travel-deep-blue: #15547e;
+
+  --travel-pink: #ee8fb4;
+  --travel-light-pink: #fff0f6;
+  --travel-deep-pink: #c95f8c;
+
+  --travel-green: #57a773;
+  --travel-orange: #e89b4c;
+  --travel-purple: #9575cd;
+  --travel-red: #d75d5d;
+
+  --travel-text: #263746;
+  --travel-sub-text: #617383;
+  --travel-border: #d9e5ec;
+  --travel-background: #f6fbfe;
+
+  --travel-shadow:
+    0 6px 20px rgba(38, 74, 96, 0.10);
+}
+
+/* ========================================
+   ページ全体
+======================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family:
+    "Yu Gothic UI",
+    "Yu Gothic",
+    "Meiryo",
+    sans-serif;
+  color: var(--travel-text);
+  background: var(--travel-background);
+}
+
+.book .book-body {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(234, 247, 255, 0.75),
+      rgba(255, 240, 246, 0.35)
+    );
+}
+
+.book .book-body .page-wrapper .page-inner {
+  max-width: 980px;
+  padding: 38px 46px 80px;
+}
+
+.markdown-section {
+  font-size: 16px;
+  line-height: 1.9;
+  background: #ffffff;
+  padding: 38px 48px 60px;
+  border-radius: 18px;
+  box-shadow: var(--travel-shadow);
+}
+
+/* ========================================
+   見出し
+======================================== */
+
+.markdown-section h1 {
+  margin-top: 0;
+  margin-bottom: 32px;
+  padding: 16px 20px;
+  font-size: 2.05em;
+  color: var(--travel-deep-blue);
+  background:
+    linear-gradient(
+      90deg,
+      var(--travel-light-blue),
+      var(--travel-light-pink)
+    );
+  border-left: 7px solid var(--travel-blue);
+  border-bottom: 2px solid rgba(238, 143, 180, 0.45);
+  border-radius: 10px;
+}
+
+.markdown-section h2 {
+  margin-top: 44px;
+  margin-bottom: 20px;
+  padding: 9px 14px;
+  font-size: 1.5em;
+  color: var(--travel-deep-blue);
+  background: var(--travel-light-blue);
+  border-left: 5px solid var(--travel-sky-blue);
+  border-radius: 7px;
+}
+
+.markdown-section h3 {
+  margin-top: 32px;
+  padding-bottom: 7px;
+  color: var(--travel-deep-pink);
+  border-bottom: 2px dashed rgba(238, 143, 180, 0.55);
+}
+
+/* ========================================
+   サイドバー・目次
+======================================== */
+
+.book-summary {
+  background:
+    linear-gradient(
+      180deg,
+      #f4fbff 0%,
+      #fff7fa 100%
+    );
+  border-right: 1px solid var(--travel-border);
+}
+
+.book-summary ul.summary li a {
+  padding-top: 9px;
+  padding-bottom: 9px;
+  color: #385064;
+  line-height: 1.5;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    padding-left 0.2s ease;
+}
+
+.book-summary ul.summary li a:hover {
+  color: var(--travel-deep-blue);
+  background: rgba(116, 200, 239, 0.15);
+  padding-left: 20px;
+}
+
+.book-summary ul.summary li.active > a {
+  color: var(--travel-deep-blue);
+  font-weight: bold;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(116, 200, 239, 0.28),
+      rgba(238, 143, 180, 0.18)
+    );
+  border-left: 5px solid var(--travel-pink);
+}
+
+/* HonKit標準の目次ボタン */
+.book-header .btn.toggle-summary {
+  color: #ffffff;
+  background:
+    linear-gradient(
+      135deg,
+      var(--travel-blue),
+      var(--travel-sky-blue)
+    );
+  border-radius: 8px;
+  margin: 6px;
+  padding: 7px 11px;
+  box-shadow: 0 3px 10px rgba(40, 120, 181, 0.25);
+}
+
+.book-header .btn.toggle-summary:hover {
+  background:
+    linear-gradient(
+      135deg,
+      var(--travel-deep-blue),
+      var(--travel-pink)
+    );
+}
+
+/* ========================================
+   表
+======================================== */
+
+.markdown-section table {
+  width: 100%;
+  display: table;
+  margin: 24px 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  border: 1px solid var(--travel-border);
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(38, 74, 96, 0.06);
+}
+
+.markdown-section table th {
+  padding: 12px 15px;
+  color: var(--travel-deep-blue);
+  background:
+    linear-gradient(
+      90deg,
+      var(--travel-light-blue),
+      var(--travel-light-pink)
+    );
+  border: none;
+  border-bottom: 1px solid var(--travel-border);
+}
+
+.markdown-section table td {
+  padding: 12px 15px;
+  background: #ffffff;
+  border: none;
+  border-bottom: 1px solid #edf1f4;
+}
+
+.markdown-section table tr:last-child td {
+  border-bottom: none;
+}
+
+/* ========================================
+   リンク・引用・画像
+======================================== */
+
+.markdown-section a {
+  color: var(--travel-blue);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.markdown-section a:hover {
+  color: var(--travel-deep-pink);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.markdown-section blockquote {
+  margin: 24px 0;
+  padding: 15px 20px;
+  color: #405768;
+  background:
+    linear-gradient(
+      90deg,
+      var(--travel-light-blue),
+      #ffffff
+    );
+  border-left: 6px solid var(--travel-pink);
+  border-radius: 8px;
+}
+
+.markdown-section img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: 480px;
+  margin: 26px auto;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: var(--travel-shadow);
+}
+
+/* ========================================
+   Googleマップボタン
+======================================== */
+
+.map-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 20px 0 26px;
+}
+
+.map-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 10px 18px;
+  color: #ffffff !important;
+  font-weight: bold;
+  text-decoration: none !important;
+  background:
+    linear-gradient(
+      135deg,
+      var(--travel-blue),
+      var(--travel-sky-blue)
+    );
+  border-radius: 999px;
+  box-shadow: 0 5px 14px rgba(40, 120, 181, 0.22);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.map-button:hover {
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(40, 120, 181, 0.30);
+}
+
+.map-button.pink {
+  background:
+    linear-gradient(
+      135deg,
+      var(--travel-pink),
+      #f4adc8
+    );
+}
+
+/* ========================================
+   タイムライン
+======================================== */
+
+.travel-timeline {
+  position: relative;
+  margin: 30px 0;
+  padding: 0;
+}
+
+.travel-timeline::before {
+  position: absolute;
+  top: 7px;
+  bottom: 7px;
+  left: 91px;
+  width: 3px;
+  content: "";
+  background:
+    linear-gradient(
+      180deg,
+      var(--travel-sky-blue),
+      var(--travel-pink)
+    );
+  border-radius: 3px;
+}
+
+.timeline-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  column-gap: 38px;
+  margin-bottom: 26px;
+}
+
+.timeline-time {
+  padding-top: 16px;
+  color: var(--travel-deep-blue);
+  font-size: 1.05em;
+  font-weight: bold;
+  text-align: right;
+}
+
+.timeline-card {
+  position: relative;
+  padding: 17px 20px;
+  background: #ffffff;
+  border: 1px solid var(--travel-border);
+  border-left: 5px solid var(--travel-blue);
+  border-radius: 12px;
+  box-shadow: 0 5px 16px rgba(38, 74, 96, 0.08);
+}
+
+.timeline-card::before {
+  position: absolute;
+  top: 19px;
+  left: -48px;
+  width: 15px;
+  height: 15px;
+  content: "";
+  background: var(--travel-blue);
+  border: 4px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px var(--travel-sky-blue);
+}
+
+.timeline-card h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  padding: 0;
+  color: var(--travel-deep-blue);
+  border: none;
+}
+
+.timeline-label {
+  display: inline-block;
+  margin-bottom: 9px;
+  padding: 3px 10px;
+  color: #ffffff;
+  font-size: 0.82em;
+  font-weight: bold;
+  border-radius: 999px;
+}
+
+.timeline-item.transport .timeline-card {
+  border-left-color: var(--travel-blue);
+}
+
+.timeline-item.transport .timeline-card::before,
+.timeline-label.transport {
+  background: var(--travel-blue);
+}
+
+.timeline-item.sightseeing .timeline-card {
+  border-left-color: var(--travel-green);
+}
+
+.timeline-item.sightseeing .timeline-card::before,
+.timeline-label.sightseeing {
+  background: var(--travel-green);
+}
+
+.timeline-item.food .timeline-card {
+  border-left-color: var(--travel-orange);
+}
+
+.timeline-item.food .timeline-card::before,
+.timeline-label.food {
+  background: var(--travel-orange);
+}
+
+.timeline-item.hotel .timeline-card {
+  border-left-color: var(--travel-purple);
+}
+
+.timeline-item.hotel .timeline-card::before,
+.timeline-label.hotel {
+  background: var(--travel-purple);
+}
+
+.timeline-item.important .timeline-card {
+  border-left-color: var(--travel-red);
+}
+
+.timeline-item.important .timeline-card::before,
+.timeline-label.important {
+  background: var(--travel-red);
+}
+
+/* ========================================
+   写真の説明
+======================================== */
+
+.photo-caption {
+  margin-top: -18px;
+  margin-bottom: 28px;
+  color: var(--travel-sub-text);
+  font-size: 0.9em;
+  text-align: center;
+}
+
+/* ========================================
+   右下の固定ボタン
+======================================== */
+
+.travel-floating-buttons {
+  position: fixed;
+  right: 22px;
+  bottom: 24px;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.travel-floating-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 94px;
+  min-height: 46px;
+  padding: 9px 15px;
+  color: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
+  background:
+    linear-gradient(
+      135deg,
+      var(--travel-blue),
+      var(--travel-sky-blue)
+    );
+  border: none;
+  border-radius: 999px;
+  box-shadow: 0 6px 16px rgba(40, 120, 181, 0.28);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.travel-floating-button:hover {
+  transform: translateY(-2px);
+}
+
+.travel-floating-button.menu-button {
+  background:
+    linear-gradient(
+      135deg,
+      var(--travel-pink),
+      #f4adc8
+    );
+}
+
+.travel-floating-button.back-to-top {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.travel-floating-button.back-to-top.is-visible {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========================================
+   スマートフォン
+======================================== */
+
+@media screen and (max-width: 700px) {
+  .book .book-body .page-wrapper .page-inner {
+    padding: 16px 12px 90px;
+  }
+
+  .markdown-section {
+    padding: 24px 17px 42px;
+    font-size: 15px;
+    line-height: 1.8;
+    border-radius: 13px;
+  }
+
+  .markdown-section h1 {
+    padding: 13px 14px;
+    font-size: 1.62em;
+  }
+
+  .markdown-section h2 {
+    margin-top: 34px;
+    font-size: 1.3em;
+  }
+
+  .markdown-section table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .map-buttons {
+    flex-direction: column;
+  }
+
+  .map-button {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .travel-timeline::before {
+    left: 69px;
+  }
+
+  .timeline-item {
+    grid-template-columns: 54px 1fr;
+    column-gap: 31px;
+  }
+
+  .timeline-time {
+    padding-top: 15px;
+    font-size: 0.91em;
+  }
+
+  .timeline-card {
+    padding: 15px 14px;
+  }
+
+  .timeline-card::before {
+    left: -40px;
+  }
+
+  .travel-floating-buttons {
+    right: 13px;
+    bottom: 16px;
+  }
+
+  .travel-floating-button {
+    min-width: 88px;
+    min-height: 46px;
+    padding: 8px 13px;
+    font-size: 14px;
+  }
+
+  .book-header .btn.toggle-summary {
+    position: relative;
+    z-index: 1000;
+    min-width: 44px;
+    min-height: 40px;
+  }
+}
